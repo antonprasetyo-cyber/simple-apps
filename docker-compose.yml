@@ -1,0 +1,12 @@
+services:
+  apps-anton:
+    build: .
+    container_name: ct-apps-anton
+    ports:
+      - "80:3000"
+    image: "antonprasetyo/apps-anton"
+    volumes:
+      - vol-apps:/app/public/images/
+
+volumes:
+  vol-apps:
