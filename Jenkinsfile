@@ -30,9 +30,11 @@ pipeline {
                 '''
             }
         }
-        stage('Running Container') {
+        stage('Deploy Apps') {
             steps {
-                echo 'Running Container'
+                sh '''
+                docker compose up -d
+                '''
             }
         }
         stage('Push Image') {
