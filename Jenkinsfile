@@ -25,7 +25,9 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                echo 'Build Image'
+                sh '''
+                docker compose build
+                '''
             }
         }
         stage('Running Container') {
